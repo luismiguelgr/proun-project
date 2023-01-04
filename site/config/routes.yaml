@@ -1,0 +1,19 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+user:
+    resource: routes/user.yaml
+
+trip:
+    resource: routes/trip.yaml
+    prefix: /api
+
+point:
+    resource: routes/point.yaml
+    prefix: /api
+
+
+
+
+

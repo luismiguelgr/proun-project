@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
+    <entity name="App\Entity\Trip" table="trip">
+
+        <id name="id" column="id" type="uuid">
+            <generator strategy="CUSTOM"/>
+            <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
+        </id>
+
+        <field name="typeVehicle" length="100"/>
+
+        <many-to-one field="pickupPoint" target-entity="Point" />
+        <many-to-one field="destinationPoint" target-entity="Point" />
+
+        <many-to-one field="serviceLocator" target-entity="ServiceLocator" inversed-by="trips">
+            <join-column name="serviceLocator" referenced-column-name="id" />
+        </many-to-one>
+
+    </entity>
+</doctrine-mapping>

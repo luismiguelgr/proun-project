@@ -1,0 +1,42 @@
+version: "3"
+services:
+  app:
+    build: ./docker/php/.
+    container_name: proun-php
+    working_dir: /var/www/symfony
+    volumes:
+      - ./site:/var/www/symfony
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: proun-nginx
+    working_dir: /var/www/symfony
+    ports:
+      - 8001:80
+    volumes:
+      - ./site:/var/www/symfony
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:5.7.22
+    container_name: proun-mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=proun
+      - MYSQL_ROOT_PASSWORD=abc123.
+      - MYSQL_USER=proun
+      - MYSQL_PASSWORD=pass
+    volumes:
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 8888:3306
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

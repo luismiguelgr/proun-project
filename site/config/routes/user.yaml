@@ -1,0 +1,8 @@
+register:
+  path: /register
+  methods: [POST]
+  controller: App\Controller\User\UserCreateController::index
+
+api_login_check:
+  path: /api/login_check
+  methods: [POST]

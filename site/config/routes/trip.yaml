@@ -1,0 +1,44 @@
+get_all_trips:
+  path: /trips
+  methods: [GET]
+  controller: App\Controller\Trip\TripListController::getAllTrips
+
+get_trip_by_uuid:
+  path: /trip/{id}
+  methods: [GET]
+  controller: App\Controller\Trip\TripFindController::getTripByUuid
+
+get_trip_by_pickup_point:
+  path: /trip/pickup_point/{id}
+  methods: [GET]
+  controller: App\Controller\Trip\TripFindController::getTripByPickupPoint
+
+get_trip_by_destination_point:
+  path: /trip/destination_point/{id}
+  methods: [GET]
+  controller: App\Controller\Trip\TripFindController::getTripByDestinationPoint
+
+get_trip_by_service_locator:
+  path: /trip/service_locator/{id}
+  methods: [GET]
+  controller: App\Controller\Trip\TripFindController::getTripByServiceLocator
+
+get_trip_by_type_vehicle:
+  path: /trip/type_vehicle/{id}
+  methods: [GET]
+  controller: App\Controller\Trip\TripFindController::getTripByTypeVehicle
+
+add_trip:
+  path: /trip/add
+  methods: [POST]
+  controller: App\Controller\Trip\TripCreateController::createTrip
+
+delete_trip:
+  path: /trip/{id}
+  methods: [DELETE]
+  controller: App\Controller\Trip\TripDeleteController::deleteTrip
+
+update_trip:
+  path: /trip/{id}
+  methods: [PUT]
+  controller: App\Controller\Trip\TripEditController::updateTrip

@@ -1,0 +1,4 @@
+get_all_points:
+  path: /points
+  methods: [GET]
+  controller: App\Controller\Point\PointListController::getAllPoints
