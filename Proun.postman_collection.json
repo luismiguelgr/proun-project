@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "c0aaa4cb-103f-4010-ae62-63426e3b4542",
+		"name": "Proun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "proun@proun.es",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "abc123.",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "proun",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"proun@proun.es\",\n    \"password\": \"abc123.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/login_check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"login_check"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Point",
+			"item": [
+				{
+					"name": "AllPoints",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/points",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"points"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trip",
+			"item": [
+				{
+					"name": "FindBy",
+					"item": [
+						{
+							"name": "findById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8001/api/trip/1e5bbd7b-b631-415f-b884-e6c052e22f8d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"trip",
+										"1e5bbd7b-b631-415f-b884-e6c052e22f8d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByTypeVehicle",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8001/api/trip/type_vehicle/furgoneta",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"trip",
+										"type_vehicle",
+										"furgoneta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByPickupPoint",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8001/api/trip/pickup_point/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"trip",
+										"pickup_point",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByDestinationPoint",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8001/api/trip/destination_point/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"trip",
+										"destination_point",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByServiceLocator",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8001/api/trip/service_locator/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"trip",
+										"service_locator",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AllTrips",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTrip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pickupPoint\": 5,\n    \"destinationPoint\": 2,\n    \"serviceLocator\": 6,\n    \"typeVehicle\": \"furgoneta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/trip/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"trip",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTrip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pickupPoint\": 1,\n    \"destinationPoint\": 2,\n    \"serviceLocator\": 6,\n    \"typeVehicle\": \"coche\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/trip/4243c3c3-18aa-4162-97c3-a1ae309cdc5e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"trip",
+								"4243c3c3-18aa-4162-97c3-a1ae309cdc5e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTrip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NzMwMzE4NjcsImV4cCI6MTY3MzAzNTQ2Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoicHJvdW5AcHJvdW4uZXMifQ.WdvBlkO59x4DrjcygfPHDu9nNtwDjDth_YVgxRzZ01PozCszWA-lEY14Dao7nWwITRGx3glh3mYmACbSms_1LVClc70q-nBRRKwTUgcUJ3tzHC2lKwQ1qq7vzMUUUs7toEmZKbG8_-uqKFAgCIi8RJwqOy3_z2ECF7OI265092M8bg-ZWHogaI9EinO-caeyiacrk5T1ssZyXFgoQKK8RhgVSqHxCLvu1T9AhpvkNtCu8w_SE_XD_a0-VSHzGtGApkHIKfJQDzY29C9wFUCroOmyedYbdwsR2RbCiIlXcyPOoCtbBvc7X55MBnJIEhXV2my5WImLHLvm0gBU8v0uzA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/trip/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"trip",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
